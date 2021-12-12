@@ -1,0 +1,81 @@
+﻿@model ATMS_TestingSubject.Classes.UserLogin
+@using ATMS_TestingSubject.Models
+@{ 
+    ViewBag.Title = "Login";    
+}
+<div class="auth-wrapper">
+    <div class="auth-content">
+        <div class="auth-bg">
+            <span class="r"></span>
+            <span class="r s"></span>
+            <span class="r s"></span>
+            <span class="r"></span>
+        </div>
+        <div class="card">
+            <div class="card-body text-center">
+                <div class="mb-4">
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                         width="30"
+                         height="30"
+                         viewBox="0 0 24 24"
+                         fill="none"
+                         stroke="#1de9b6"
+                         stroke-width="2"
+                         stroke-linecap="round"
+                         stroke-linejoin="round"
+                         class="auth-icon">
+                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                        <path d="M7 11V7a5 5 0 0 1 9.9-1"></path>
+                    </svg>
+                    <h4 class="mb-4">Login</h4>
+                </div>
+                @if (ViewBag.msg != null)
+                {
+                    <div class="alert alert-danger">
+                        @ViewBag.msg
+                    </div>
+                }
+                 @if (ViewBag.msgApproved != null)
+                {
+                    <div class="alert alert-info">
+                        @ViewBag.msgApproved
+                    </div>
+                }
+                @using (Html.BeginForm("Login","Home",FormMethod.Post))
+                {
+                    @Html.AntiForgeryToken()
+                   
+                    <div class="form-group">
+                        <div class="input-group mb-4">
+                            @Html.DropDownListFor(m => m.Type,
+                                 new SelectList(Enum.GetValues(typeof(TypeOptions))),
+                                 "Select Type", new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.Type, "", new { @class = "text-danger" })
+
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group mb-4">
+                            @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control", placeholder = "Email", autocomplete = "off"  } })
+                            @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group mb-4">
+                            @Html.EditorFor(model => model.Passward,new { htmlAttributes = new { @class = "form-control", placeholder = "Password", autocomplete = "off" } })
+                            @Html.ValidationMessageFor(model => model.Passward, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group mb-4">
+                            <button class="btn btn-primary btn-block shadow-2 mb-4">Login</button>
+                        </div>
+                    </div>
+                }
+                <p class="mb-0 text-muted">
+                   Don’t have an account? <a href="@Url.Action("Register","Home")">Signup</a>
+                </p>
+         </div>
+        </div>
+    </div>
+</div>

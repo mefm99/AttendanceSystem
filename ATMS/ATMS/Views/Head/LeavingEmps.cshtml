@@ -1,0 +1,53 @@
+﻿@model IEnumerable<ATMS_TestingSubject.Models.Leaving>
+
+@{
+    ViewBag.Title = "LeavingEmps";
+    Layout = "~/Views/Shared/_Head.cshtml";
+    @Model = ViewBag.leavers
+}
+
+<h2>LeavingEmps</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Ticket.RollNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Time)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LeaveRequest)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LeaveState)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ticket.RollNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Time)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LeaveRequest)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LeaveState)
+        </td>
+      
+    </tr>
+}
+
+</table>

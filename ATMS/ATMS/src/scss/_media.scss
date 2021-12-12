@@ -1,0 +1,48 @@
+//authentication pages
+@media only screen and (max-width: 768px) {
+  .auth-wrapper {
+    max-width: 360px;
+  }
+}
+@media only screen and (max-width: 575px) {
+  .auth-wrapper .card .card-body {
+    padding: 30px 15px;
+  }
+}
+
+//admin side navbar
+@media only screen and (min-width: 600px) {
+  nav.custom-nav {
+    border-radius: 0 1rem 0 0;
+    top: 0%;
+    width: 5rem;
+    height: 100%;
+    &:hover {
+      width: 14rem;
+      span.link-text {
+        display: inline;
+      }
+    }
+  }
+  main {
+    margin-left: 5rem;
+    width: calc(100% - 5rem);
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  nav.custom-nav {
+    bottom: 0;
+    width: 100vw;
+    height: 5rem;
+    ul.custom-nav-list {
+      flex-direction: row;
+      li.logo {
+        display: none;
+      }
+      .custom-nav-link {
+        justify-content: center;
+      }
+    }
+  }
+}

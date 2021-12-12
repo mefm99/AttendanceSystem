@@ -1,0 +1,92 @@
+﻿@model IEnumerable<ATMS_TestingSubject.Models.UserInfo>
+@using ATMS_TestingSubject.Models
+@{
+    ViewBag.Title = "Users";
+    Layout = "~/Views/Shared/_Admin.cshtml";
+    int i = 1;
+}
+
+<div class="container">
+    <h2>Users</h2>
+    <hr />
+    <p>
+        @using (Html.BeginForm("Users", "Admin", FormMethod.Get))
+        {
+        <div class="row">
+            <div class="col-md-6">
+                @Html.DropDownList("Type", new SelectList(Enum.GetValues(typeof(TypeOptions))),
+                   "Select Type To Filter", new { @class = "form-control" })
+            </div>
+            
+            <div class="col-md-4">
+                <button class="btn btn-dark btn-block shadow-2 mb-4">Search</button>
+            </div>
+        </div>
+
+        }
+    </p>
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <a href="@Url.Action("AddAdmin", "Admin")" class="btn btn-dark btn-block">Add Admin</a>
+        </div>
+        <div class="col-md-4">
+            <a href="@Url.Action("AddHead", "Admin")" class="btn btn-dark btn-block">Add Head</a>
+        </div>
+        <div class="col-md-4">
+            <a href="@Url.Action("AddEmp", "Admin")" class="btn btn-dark btn-block">Add Employee</a>
+        </div>
+    </div>
+    <br />
+    <br />
+    <table class="table">
+        <tr>
+            <th>Num</th>
+            <th>
+                @Html.DisplayNameFor(model => model.Type)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Gender)
+            </th>
+            <th>Actions</th>
+        </tr>
+
+        @{
+            if (Model.Count() == 0)
+            {
+                <tr class="text-center">
+                    <td colspan="5">No Data</td>
+                </tr>
+            }
+            else
+            {
+                foreach (var item in Model)
+                {
+                    <tr>
+                        <td><span>@(i++)</span></td>
+
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Type)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Gender)
+                        </td>
+
+                        <td>
+                            <a href="@Url.Action("DetailsUser", "Admin",new { id = item.Id })" target="_blank" class="btn btn-dark">Details</a>
+                            <a href="@Url.Action("DeleteUser", "Admin",new { id = item.Id })" target="_blank" class="btn btn-dark">Delete</a>
+                        </td>
+                    </tr>
+                }
+            }
+        }
+
+    </table>
+
+</div>

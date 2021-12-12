@@ -1,0 +1,110 @@
+$mainBackgroundColor: #f4f4f4;
+$lightColor: #fff;
+$mainColor: #888;
+$fontStack: "Poppins", sans-serif;
+$primaryColor: #04a9f5;
+$secondaryColor: #748892;
+$alternativeColor1: #1de9b6;
+$alternativeColor2: #3ebfea;
+$alternativeColor3: #f4c22b;
+$alternativeColor4: #f44236;
+$alternativeColor5: #37474f;
+$primaryGradient: linear-gradient(-135deg, #1de9b6 0%, #1dc4e9 100%);
+$secondaryGradient: linear-gradient(-135deg, #899fd4 0%, #a389d4 100%);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: $mainBackgroundColor;
+  color: $alternativeColor5;
+  font-size: 14px;
+  font-weight: 400;
+  position: relative;
+  *,
+  input,
+  button {
+    font-family: $fontStack;
+  }
+  *:focus {
+    outline: none;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: #111;
+    font-weight: 400;
+  }
+  h1 {
+    font-size: 48px;
+  }
+  h2 {
+    font-size: 44px;
+  }
+  h3 {
+    font-size: 26px;
+  }
+  h4 {
+    font-size: 20px;
+  }
+  h5 {
+    font-size: 18px;
+  }
+  h6 {
+    font-size: 14px;
+  }
+  p {
+    font-size: 14px;
+  }
+  .img-radius {
+    border-radius: 50%;
+  }
+  .shadow {
+    &-1 {
+      box-shadow: 0 7px 12px 0 rgba(62, 57, 107, 0.16);
+    }
+    &-2 {
+      box-shadow: 0 10px 18px 0 rgba(62, 57, 107, 0.2);
+    }
+    &-3 {
+      box-shadow: 0 14px 24px 0 rgba(62, 57, 107, 0.26);
+    }
+    &-4 {
+      box-shadow: 0 16px 28px 0 rgba(62, 57, 107, 0.3);
+    }
+    &-5 {
+      box-shadow: 0 20px 24px 0 rgba(62, 57, 107, 0.36);
+    }
+  }
+  .theme-bg {
+    background: $primaryGradient;
+  }
+
+  .theme-bg2 {
+    background: $secondaryGradient;
+  }
+
+  table thead th {
+    letter-spacing: 0.5ch;
+  }
+  &::-webkit-scrollbar {
+    width: 0.25rem;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #1e1e24;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #6649b8;
+  }
+  a:hover {
+    outline: none;
+    text-decoration: none;
+  }
+}

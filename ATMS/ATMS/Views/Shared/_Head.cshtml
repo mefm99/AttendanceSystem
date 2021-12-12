@@ -1,0 +1,113 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- Meta -->
+    <meta http-equiv="refresh" content="60" />
+
+    <meta charset="utf-8" />
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="author" content="AFB" />
+    <title>Head of Deparment | </title>
+    <!-- Favicon icon -->
+    <!--fonts import -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital@1&display=swap"
+          rel="stylesheet" />
+    <!-- fontawesome kit -->
+    <!-- <script
+      src="https://kit.fontawesome.com/5ecab19920.js"
+      crossorigin="anonymous"
+    ></script> -->
+    <link href="~/src/new/css/style.min.css" rel="stylesheet" />
+    <link href="~/src/new/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    <nav class="custom-nav">
+        <ul class="custom-nav-list">
+            <li class="logo">
+                <a href="/index.html" class="custom-nav-link">
+                    @*<img src="~/src/new/images/logo-thumb.png" alt="Logo" />*@
+                    <span class="link-text logo-text">ATMS</span>
+                </a>
+            </li>
+            <li class="custom-nav-item">
+                <a href="@Url.Action("Index", "Head")" class="custom-nav-link">
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                         width="24"
+                         height="24"
+                         viewBox="0 0 24 24"
+                         fill="none"
+                         stroke="currentColor"
+                         stroke-width="2"
+                         stroke-linecap="round"
+                         stroke-linejoin="round"
+                         class="feather feather-home">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
+                              class="icon-secondary"></path>
+                        <polyline points="9 22 9 12 15 12 15 22"
+                                  class="icon-primary"></polyline>
+                    </svg>
+                    <span class="link-text">Home</span>
+                </a>
+            </li>
+
+            <li class="custom-nav-item">
+
+                <a href="@Url.Action("CurrentEmp","Head")" class="custom-nav-link">
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                         width="24"
+                         height="24"
+                         viewBox="0 0 24 24"
+                         fill="none"
+                         stroke="currentColor"
+                         stroke-width="2"
+                         stroke-linecap="round"
+                         stroke-linejoin="round"
+                         class="feather feather-home">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
+                              class="icon-secondary"></path>
+                        <polyline points="9 22 9 12 15 12 15 22"
+                                  class="icon-primary"></polyline>
+                    </svg>
+                    <span class="link-text">Current Employees</span>
+                </a>
+            </li>
+
+
+            <li class="custom-nav-item">
+                <a href="@Url.Action("OnlineEmp","Head")" class="custom-nav-link">
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                         width="24"
+                         height="24"
+                         viewBox="0 0 24 24"
+                         fill="none"
+                         stroke="currentColor"
+                         stroke-width="2"
+                         stroke-linecap="round"
+                         stroke-linejoin="round"
+                         class="feather feather-home">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
+                              class="icon-secondary"></path>
+                        <polyline points="9 22 9 12 15 12 15 22"
+                                  class="icon-primary"></polyline>
+                    </svg>
+                    <span class="link-text">Online Employees</span>
+                </a>
+            </li>
+            
+           
+
+
+
+        </ul>
+    </nav>
+    <main>
+        @RenderBody()
+    </main>
+    <script src="~/src/new/js/bootstrap.min.js"></script>
+    <script src="~/src/new/js/jquery.min.js"></script>
+</body>
+</html>

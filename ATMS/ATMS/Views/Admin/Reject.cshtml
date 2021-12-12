@@ -1,0 +1,71 @@
+﻿@model ATMS_TestingSubject.Models.UserInfo
+@{
+    ViewBag.Title = "Reject";
+    Layout = "~/Views/Shared/_Admin.cshtml";
+}
+
+<div class="container">
+    <h2>Approve</h2>
+
+    <h3 class="text-danger">Are you sure you want to Reject this?</h3>
+    <div>
+        <h4>UserInfo</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Type)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Type)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+
+
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Email)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Email)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Gender)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Gender)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Department.DepName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Department.DepName)
+            </dd>
+
+
+        </dl>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            @Html.HiddenFor(model => model.Id)
+
+            <div class="form-actions no-color">
+                <input type="submit" value="Reject" class="btn btn-default" /> |
+                @Html.ActionLink("Back to List", "Requests")
+            </div>
+        }
+    </div>
+</div>

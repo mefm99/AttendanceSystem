@@ -1,0 +1,115 @@
+﻿@model ATMS_TestingSubject.Classes.UserRegister
+@using ATMS_TestingSubject.Models
+@{
+    ViewBag.Title = "Register";
+}
+<div class="auth-wrapper">
+    <div class="auth-content">
+        <div class="auth-bg">
+            <span class="r"></span>
+            <span class="r s"></span>
+            <span class="r s"></span>
+            <span class="r"></span>
+        </div>
+        <div class="card">
+            <div class="card-body text-center" style="padding:2rem">
+                <div class="mb-4">
+                    <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="30"
+                    height="30"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#1de9b6"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="feather feather-user-plus">
+                    <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="8.5" cy="7" r="4"></circle>
+                    <line x1="20" y1="8" x2="20" y2="14"></line>
+                    <line x1="23" y1="11" x2="17" y2="11"></line>
+                  </svg>
+                    <h4 class="mb-4">Register</h4>
+                </div>
+               
+                @using (Html.BeginForm("Register", "Home", FormMethod.Post))
+                {
+                    @Html.AntiForgeryToken()
+           
+                    <div class="form-group">
+                        <div class="row">
+                             @Html.DropDownListFor(m => m.Type,
+                             new SelectList(Enum.GetValues(typeof(TypeOptions))),
+                             "Select Type", new { @class = "form-control" })
+                        </div>
+                        <div class="row">
+                            @Html.ValidationMessageFor(model => model.Type, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            @Html.DropDownListFor(m => m.Gender,
+                                  new SelectList(Enum.GetValues(typeof(GenderOptions))),
+                                  "Select Gender", new { @class = "form-control" })
+                        </div>
+                         <div class="row">
+                            @Html.ValidationMessageFor(model => model.Gender, "", new { @class = "text-danger" })
+
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            @Html.DropDownListFor(m => m.DepId, (IEnumerable<SelectListItem>)ViewBag.DepId, "Select Department", new { @class = "form-control" })
+
+                        </div>
+                        <div class="row">
+                            @Html.ValidationMessageFor(model => model.DepId, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                            <div class="row">
+                                @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control", placeholder = "Name", autocomplete = "off" } })
+                            </div>
+                            <div class="row">
+                                @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                            </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control", placeholder = "Email", autocomplete = "off" } })
+                        </div>
+                        <div class="row">
+                            @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            @Html.EditorFor(model => model.Passward, new { htmlAttributes = new { @class = "form-control", placeholder = "Paasword", autocomplete = "off" } })
+                        </div>
+                        <div class="row">
+                            @Html.ValidationMessageFor(model => model.Passward, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            @Html.EditorFor(model => model.ComparePassward, new { htmlAttributes = new { @class = "form-control", placeholder = "Compare Passward", autocomplete = "off" } })
+                        </div>
+                        <div class="row">
+                            @Html.ValidationMessageFor(model => model.ComparePassward, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <button class="btn btn-primary btn-block shadow-2 mb-4">Register</button>
+                        </div>
+                    </div>
+                }
+            <p class="mb-0 text-muted">
+                Have you an accountalready ? <a href="@Url.Action("Login","Home")">Signin</a>
+            </p>
+         </div>
+        </div>
+    </div>
+</div>
+

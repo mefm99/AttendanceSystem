@@ -1,0 +1,63 @@
+﻿@model IEnumerable<ATMS_TestingSubject.Models.Leaving>
+
+@{
+    ViewBag.Title = "LeavingRequest";
+    Layout = "~/Views/Shared/_Admin.cshtml";
+}
+
+<div class="container">
+    <h2>LeavingRequest</h2>
+
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.RollNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Time)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LeaveRequest)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LeaveState)
+            </th>
+            <th></th>
+        </tr>
+
+        @{
+            if (Model.Count() == 0)
+            {
+                <tr>
+                    <td rowspan="5">No Leaving Request</td>
+                </tr>
+            }
+            else
+            {
+                foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.RollNo)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Time)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.LeaveRequest)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.LeaveState)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Accept", "Accept", "Admin", new { id = item.LeaveId }, null) |
+                            @Html.ActionLink("Refuse", "Refuse", "Admin", new { id = item.LeaveId }, null) |
+                        </td>
+                    </tr>
+                }
+            }
+        }
+
+    </table>
+
+</div>

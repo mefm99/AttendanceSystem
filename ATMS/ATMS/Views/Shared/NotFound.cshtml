@@ -1,0 +1,73 @@
+﻿@{ 
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="admin content management system for attendance tracking system for e-company" />
+    <meta name="keywords" content="admin theme,admin content management system,admin CMS,content manager, admin, attendance tracking system, ATMS, CMS" />
+    <meta name="author" content="AFB" />
+    <title>Not Found</title>
+    @Styles.Render("~/Content/css")
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="auth-wrapper">
+        <div class="auth-content">
+            <div class="auth-bg">
+                <span class="r"></span>
+                <span class="r s"></span>
+                <span class="r s"></span>
+                <span class="r"></span>
+            </div>
+            <div class="card">
+                <div class="card-body text-center">
+                    <div class="mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                             width="30"
+                             height="30"
+                             viewBox="0 0 24 24"
+                             fill="none"
+                             stroke="#1de9b6"
+                             stroke-width="2"
+                             stroke-linecap="round"
+                             stroke-linejoin="round"
+                             class="auth-icon">
+                        </svg>
+                        <div>
+                            <h1>
+                                Error 404
+                            </h1>
+                            <h3>Not Found</h3>
+                            @{
+                                if (Session["AdminId"] != null)
+                                {
+                                    <h5><a class="link-text" href="@Url.Action("Index","Admin")">Home Page</a></h5>
+                                }
+                                else if (Session["HeadId"] != null)
+                                {
+                                    <h5><a class="link-text" href="@Url.Action("Index","Head")">Home Page</a></h5>
+                                }
+                                else if (Session["EmpId"] != null)
+                                {
+                                    <h5><a class="link-text" href="@Url.Action("Index","Employee")">Home Page</a></h5>
+                                }
+                                else
+                                {
+                                    <h5><a class="link-text" href="@Url.Action("Index","Home")">Home Page</a></h5>
+                                }
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+</body>
+</html>

@@ -1,0 +1,163 @@
+﻿@model ATMS_TestingSubject.Models.UserInfo
+
+@{
+    ViewBag.Title = "Details User";
+    Layout = "~/Views/Shared/_Admin.cshtml";
+}
+
+<div class="container">
+    <h2>Details User</h2>
+
+    <div>
+        <h4>UserInfo</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            @{
+                if (Model.Type == "Head")
+                {
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Type)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Type)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Name)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Name)
+                    </dd>
+
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Email)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Email)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Gender)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Gender)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Department.DepName)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Department.DepName)
+                    </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.AbsenceHours)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.AbsenceHours)
+                    </dd>
+                }
+                else if (Model.Type == "Admin")
+                {
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Type)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Type)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Name)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Name)
+                    </dd>
+
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Email)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Email)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Gender)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Gender)
+                    </dd>
+
+                }
+                else if (Model.Type == "Employee")
+                {
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Type)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Type)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Name)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Name)
+                    </dd>
+
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Email)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Email)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Gender)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Gender)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Department.DepName)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Department.DepName)
+                    </dd>
+
+
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.AbsenceHours)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.AbsenceHours)
+                    </dd>
+                }
+            }
+
+
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Back to List", "Users")
+    </p>
+</div>

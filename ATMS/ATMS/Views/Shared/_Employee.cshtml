@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta -->
+    <meta http-equiv="refresh" content="60" />
+    <meta charset="utf-8" />
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Employee | @ViewBag.title</title>
+
+    <!-- fontawesome kit -->
+  
+    <script src="https://kit.fontawesome.com/5ecab19920.js"
+            crossorigin="anonymous"></script>
+    <link href="~/src/new/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/src/new/css/styles.css" rel="stylesheet" />
+</head>
+<body>
+    <!-- navbar -->
+    <nav class="navbar navbar-dark bg-dark">
+        <a class="logo" href="@Url.Action("Index", "Employee")">ATMS</a>
+        <div class="float-right mr-3 nav-right">
+
+            <a class="mx-2" href="@Url.Action("DetailsMe", "Employee")">
+                My Details
+            </a>
+            <a class="mx-2" href="@Url.Action("Logout", "Home")">
+                <span>Logout</span>
+                <i class="fas fa-sign-out-alt"></i>
+            </a>
+        </div>
+    </nav>
+
+    <main>
+        @RenderBody()
+    </main>
+    <script src="~/src/new/js/jquery.min.js"></script>
+    <script src="~/src/new/js/bootstrap.min.js"></script>
+</body>
+</html>

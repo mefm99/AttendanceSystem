@@ -1,0 +1,60 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;1,200;1,300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Piedra&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+a,
+a:hover {
+  text-decoration: none !important;
+}
+ul {
+  list-style: none;
+}
+
+.navbar,
+a.logo,
+.card-header,
+.nav-right a,
+i {
+  color: #fff;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+}
+
+a.logo {
+  margin: auto;
+  font-family: "Piedra", cursive;
+  font-size: 2rem;
+  letter-spacing: 5px;
+}
+
+.icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  margin: 0 10px;
+}
+
+.card {
+    margin: 1.8rem 0;
+    /*height: 82%;*/
+}
+
+.card-header {
+  font-weight: 400;
+  font-style: italic;
+  letter-spacing: 1px;
+}
+
+.card-body {
+  background: #eee;
+}

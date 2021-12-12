@@ -1,0 +1,82 @@
+﻿@model ATMS_TestingSubject.Models.UserInfo
+
+<script src="~/Scripts/jquery-3.3.1.min.js"></script>
+<script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+@{ ViewBag.Title = "Employee Dashboard";
+                Layout = "~/Views/Shared/_Employee.cshtml"; }
+
+@Html.Action("RandomCheck")
+
+
+<div class="container my-3">
+    <div class="row">
+        <section class="col-md-12">
+            <div class="card border-dark">
+                <div class="card-header text-center bg-dark">Checking In</div>
+                <div class="card-body">
+                    <h5 class="card-title">Welcome Back, @Session["EmpName"]!</h5>
+                    <p class="card-text" style="color: black">
+                        <div class="text-muted">
+                            Here are your recent updates: <br />
+                            Absence Hours : @Model.AbsenceHours <br />
+                            Deparment : @Model.Department.DepName <br />
+                            Active State : @Model.Active
+                        </div>
+                    </p>
+                    <a href="@Url.Action( "GetTicket", "Employee")"
+                       class="btn btn-outline-primary">
+                        Get Barcode
+
+                    </a>
+                    <a href="@Url.Action( "LeavingRequest", "Employee")" class="btn btn-outline-primary">
+                        Leave Request
+                    </a>
+                    <a href="@Url.Action( "TakeAttendance", "Employee")" class="btn btn-outline-primary">
+                        Check In
+                    </a>
+
+                    <a href="@Url.Action( "EditMe", "Employee")"
+                       class="btn btn-outline-primary">
+                        Edit
+
+                    </a>
+
+                </div>
+        </section>
+    </div>
+</div>
+
+<!-- <section class="col-md-6">
+    <div class="card border-dark">
+        <div class="card-header text-center bg-dark">Leaving Request</div>
+        <div class="card-body">
+            <form action="#">
+        <div class="form-group">
+          <label for="email">Email address:</label>
+          <input
+            type="email"
+            class="form-control"
+            placeholder="email"
+            id="email"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="resoan">Reason:</label>
+          <textarea
+            class="form-control"
+            placeholder="Reason of leaving"
+            id="reason"
+          ></textarea>
+        </div>
+        <button type="submit" class="btn btn-outline-primary">
+          Submit
+        </button>
+      </form>
+        </div>
+    </div>
+</section> -->
+<!-- @Html.ActionLink("Edit Account", "EditMe", "Employee")
+@Html.ActionLink("My Details", "DetailsMe", "Employee")
+@Html.ActionLink("Logout", "Logout", "Home") -->
+<!-- @Html.ActionLink("To Change Your Password Click Here", "ChangePassword", "Employee") -->

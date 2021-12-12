@@ -1,0 +1,34 @@
+.form-control {
+  background: #f4f7fa;
+  padding: 10px 20px;
+  font-size: 14px;
+  &:focus {
+    background: #f4f7fa;
+  }
+  &::placeholder {
+    color: #aaaeb3;
+    opacity: 1;
+  }
+  &::input-placeholder {
+    color: #aaaeb3;
+  }
+}
+
+.input-group {
+  background: #f4f7fa;
+  .input-group-text {
+    padding-left: 15px;
+    padding-right: 15px;
+    background: transparent;
+  }
+  .input-group-text i {
+    font-size: 20px;
+  }
+  .custom-file-label {
+    margin-bottom: 0;
+  }
+  .btn {
+    margin-bottom: 0;
+    margin-right: 0;
+  }
+}

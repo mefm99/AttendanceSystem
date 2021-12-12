@@ -1,0 +1,47 @@
+.admin-header {
+  height: 10vh;
+  width: 100%;
+  // background: $secondaryGradient;
+}
+main {
+  // background: $primaryGradient;
+  min-height: 100vh;
+  span.badge {
+    font-size: 0.8rem;
+  }
+  //employees
+  //employee
+  //departments
+  //leave requests
+  td {
+    vertical-align: middle !important;
+  }
+  .theme-bg {
+    background: $primaryGradient;
+    color: $mainBackgroundColor;
+  }
+  .theme-bg2 {
+    color: $mainBackgroundColor;
+    background: $secondaryGradient;
+  }
+
+  table td .label {
+    padding: 4px 10px;
+    min-height: auto;
+    position: relative;
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 1.2rem;
+    font-size: 0.8rem;
+    margin: 0 0.5rem;
+  }
+  table td {
+    .text-green {
+      font-size: 0.7rem;
+      color: $alternativeColor1;
+    }
+    .text-red {
+      font-size: 0.7rem;
+      color: $alternativeColor4;
+    }
+  }
+}

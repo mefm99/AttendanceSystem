@@ -1,0 +1,66 @@
+﻿@model IEnumerable<ATMS_TestingSubject.Models.UserInfo>
+
+@{
+    ViewBag.Title = "Requests";
+    Layout = "~/Views/Shared/_Admin.cshtml";
+}
+
+<div class="container">
+    <h2>Requests</h2>
+
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Type)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Gender)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Department.DepName)
+            </th>
+            <th>Actions</th>
+        </tr>
+        @{ if (Model.Count() <= 0)
+            {
+                <tr> <td colspan="7" class="text-center"> No Data</td> </tr>
+            }
+            else
+            {
+                foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Type)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Name)
+                        </td>
+
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Email)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Gender)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Department.DepName)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Approve", "Approve", new { id = item.Id }) |
+                            @Html.ActionLink("Reject", "Reject", new { id = item.Id })
+                        </td>
+
+                    </tr>
+                }
+                }
+            }
+    </table>
+
+</div>

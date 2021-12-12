@@ -1,0 +1,32 @@
+﻿@model ATMS_TestingSubject.Models.Department
+@{
+    ViewBag.Title = "Add Department";
+    Layout = "~/Views/Shared/_Admin.cshtml";
+}
+<h3 class="text-center my-4">
+    Add New Department
+</h3>
+<div class="container">
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <div class="form-group">
+            <div class="row">
+                @Html.EditorFor(model => model.DepName, new { htmlAttributes = new { @class = "form-control", placeholder = "Department Name", autocomplete = "off" } })
+            </div>
+            <div class="row">
+                @Html.ValidationMessageFor(model => model.DepName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        if (ViewBag.msg != null)
+        {
+            <div class="alert alert-danger">
+                @ViewBag.msg
+            </div>
+        }
+        <div class="d-flex justify-content-center">
+            <button class="btn btn-primary shadow-2 btn-block">Create</button>
+        </div>
+
+    }
+</div>

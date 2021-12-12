@@ -1,0 +1,50 @@
+﻿@model ATMS_TestingSubject.Models.UserInfo
+
+@{
+    ViewBag.Title = "Details Me";
+    Layout = "~/Views/Shared/_Admin.cshtml";
+}
+
+
+<div class="container">
+    <h2>DetailsMe</h2>
+
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Type)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Type)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Gender)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Gender)
+        </dd>
+
+    </dl>
+    <p>
+    @Html.ActionLink("Back to Home", "Index","Admin")
+</p>
+</div>

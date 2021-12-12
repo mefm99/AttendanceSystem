@@ -1,0 +1,101 @@
+.auth-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  min-width: 100%;
+  min-height: 100vh;
+  a,
+  p > a {
+    color: #111;
+    font-weight: 600;
+  }
+  .btn-auth-gen {
+    .btn-icon {
+      width: 140px;
+      height: 140px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 45px;
+      small {
+        font-size: 15px;
+      }
+    }
+  }
+  .input-group {
+    background: transparent;
+  }
+  .card {
+    margin-bottom: 0;
+  }
+  div {
+    z-index: 5;
+  }
+  .auth-content {
+    position: relative;
+    width: 390px;
+    padding: 15px;
+    z-index: 5;
+    &.multyform,
+    &.subscribe {
+      width: 750px;
+    }
+  }
+
+  .auth-icon {
+    font-size: 30px;
+    &:before {
+      background: $primaryGradient;
+      background-clip: text;
+      text-fill-color: transparent;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+  &.offline {
+    background-image: none;
+    &:before {
+      display: none;
+    }
+  }
+  .auth-bg {
+    .r {
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+    }
+    .r:first-child {
+      top: -100px;
+      right: -100px;
+      background: $primaryGradient;
+    }
+    .r:last-child {
+      left: -100px;
+      bottom: -100px;
+      background: $secondaryGradient;
+    }
+    .r.s {
+      width: 20px;
+      height: 20px;
+    }
+    .r.s:nth-child(2) {
+      top: 150px;
+      right: -150px;
+      background: $primaryColor;
+    }
+    .r.s:nth-child(3) {
+      left: -150px;
+      bottom: 150px;
+      background: $alternativeColor1;
+    }
+    .r:nth-child(odd) {
+      animation: floating 7s infinite;
+    }
+    .r:nth-child(even) {
+      animation: floating 9s infinite;
+    }
+  }
+}

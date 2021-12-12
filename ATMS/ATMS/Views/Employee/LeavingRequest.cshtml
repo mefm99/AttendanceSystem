@@ -1,0 +1,60 @@
+﻿@model ATMS_TestingSubject.Models.Leaving
+
+@{
+    ViewBag.Title = "LeavingRequest";
+    Layout = "~/Views/Shared/_Employee.cshtml";
+
+}
+
+<!-- <h2 class="text-center">LeavingRequest</h2> -->
+<div class="container my-3">
+    <div class="row">
+
+        <section class="col-md-6">
+            <div class="card border-dark">
+                <div class="card-header text-center bg-dark">Leaving Request</div>
+                <div class="card-body">
+                    @using (Html.BeginForm())
+                    {
+                        @Html.AntiForgeryToken()
+
+                        <div class="form-horizontal">
+                            <h4>Leaving</h4>
+                            <hr />
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.RollNo, "Enter barcode", htmlAttributes: new { @class = "control-label col-md-6" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.RollNo, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.RollNo, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.LeaveRequest, htmlAttributes: new { @class = "control-label col-md-6" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.LeaveRequest, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.LeaveRequest, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-md-offset-2 col-md-10">
+                                    <button type="submit" class="btn btn-outline-primary">
+                                        Submit
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+
+
+    <a href="@Url.Action( "Index", "Employee")" class="mx-3">Back to profile</a>
+    <!--@Html.ActionLink("Back to profile", "Index", "Employee", null, null)-->
+
+

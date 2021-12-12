@@ -1,0 +1,33 @@
+﻿@model ATMS_TestingSubject.Models.UserInfo
+
+
+@{
+    ViewBag.Title = "Head of Deparment Dashboard";
+    Layout = "~/Views/Shared/_Head.cshtml";
+
+}
+
+
+
+<div class="container">
+    <hr />
+    <h4>
+        Welcome Back Sir, @Session["HeadName"]!<br />
+        Deparment : @Model.Department.DepName
+    </h4>
+    <hr />
+    <br />
+    <p>
+
+        @Html.ActionLink("To Edit Yor  Account Click Here", "EditMe", "Head") <br />
+        @Html.ActionLink("To see Your Details Click Here", "DetailsMe", "Head")
+        <br />
+        @Html.ActionLink("To Change Your Password Click Here", "ChangePassword", "Head")
+    </p>
+    <hr />
+    <h6>
+        @Html.ActionLink("Logout", "Logout", "Home")
+    </h6>
+    <br />
+    <hr />
+</div>

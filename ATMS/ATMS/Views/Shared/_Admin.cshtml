@@ -1,0 +1,182 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta -->
+    <meta charset="utf-8" />
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description"
+          content="admin content management system for attendance tracking system for e-company" />
+    <meta name="keywords"
+          content="admin theme,admin content management system,admin CMS,content manager, admin, attendance tracking system, ATMS, CMS" />
+    <meta name="author" content="AFB" />
+    <title>Admin | @ViewBag.title</title>
+    <!-- Favicon icon -->
+    <!--fonts import -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital@1&display=swap"
+          rel="stylesheet" />
+    <!-- fontawesome kit -->
+    <!-- <script
+      src="https://kit.fontawesome.com/5ecab19920.js"
+      crossorigin="anonymous"
+    ></script> -->
+    <link href="~/src/new/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/src/new/css/style.min.css" rel="stylesheet" />
+</head>
+<body>
+    <nav class="custom-nav">
+        <ul class="custom-nav-list">
+            <li class="logo">
+                <a href="/index.html" class="custom-nav-link">
+                    @*<img src="~/src/new/images/logo-thumb.png" alt="Logo" />*@
+                    <span class="link-text logo-text">ATMS</span>
+                </a>
+            </li>
+            <li class="custom-nav-item">
+                <a href="@Url.Action("Index","Admin")" class="custom-nav-link">
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                         width="24"
+                         height="24"
+                         viewBox="0 0 24 24"
+                         fill="none"
+                         stroke="currentColor"
+                         stroke-width="2"
+                         stroke-linecap="round"
+                         stroke-linejoin="round"
+                         class="feather feather-home">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
+                              class="icon-secondary"></path>
+                        <polyline points="9 22 9 12 15 12 15 22"
+                                  class="icon-primary"></polyline>
+                    </svg>
+                    <span class="link-text">Home</span>
+                </a>
+            </li>
+            <li class="custom-nav-item">
+                <a href="@Url.Action("Departments","Admin")" class="custom-nav-link">
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                         width="24"
+                         height="24"
+                         viewBox="0 0 24 24"
+                         fill="none"
+                         stroke="currentColor"
+                         stroke-width="2"
+                         stroke-linecap="round"
+                         stroke-linejoin="round"
+                         class="feather feather-box">
+                        <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"
+                              class="icon-secondary"></path>
+                        <polyline points="3.27 6.96 12 12.01 20.73 6.96"
+                                  class="icon-primary"></polyline>
+                        <line x1="12"
+                              y1="22.08"
+                              x2="12"
+                              y2="12"
+                              class="icon-primary"></line>
+                    </svg>
+                    <span class="link-text">Departments</span>
+                </a>
+            </li>
+
+            <li class="custom-nav-item">
+                <a href="@Url.Action("Users","Admin")" class="custom-nav-link">
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                         width="24"
+                         height="24"
+                         viewBox="0 0 24 24"
+                         fill="none"
+                         stroke="currentColor"
+                         stroke-width="2"
+                         stroke-linecap="round"
+                         stroke-linejoin="round"
+                         class="feather feather-database">
+                        <ellipse cx="12"
+                                 cy="5"
+                                 rx="9"
+                                 ry="3"
+                                 class="icon-secondary"></ellipse>
+                        <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"
+                              class="icon-primary"></path>
+                        <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"
+                              class="icon-secondary"></path>
+                    </svg>
+                    <span class="link-text">Users</span>
+                </a>
+            </li>
+
+            <li class="custom-nav-item">
+                <a href="@Url.Action("Requests","Admin")" class="custom-nav-link">
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                         width="24"
+                         height="24"
+                         viewBox="0 0 24 24"
+                         fill="none"
+                         stroke="currentColor"
+                         stroke-width="2"
+                         stroke-linecap="round"
+                         stroke-linejoin="round"
+                         class="feather feather-file-text">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+                              class="icon-secondary"></path>
+                        <polyline points="14 2 14 8 20 8"
+                                  class="icon-secondary"></polyline>
+                        <line x1="16" y1="13" x2="8" y2="13" class="icon-primary"></line>
+                        <line x1="16" y1="17" x2="8" y2="17" class="icon-primary"></line>
+                        <polyline points="10 9 9 9 8 9" class="icon-primary"></polyline>
+                    </svg>
+                    <span class="link-text">Emp Requests</span>
+                </a>
+            </li>
+            <li class="custom-nav-item">
+                <a href="@Url.Action("OnlineUsers","Admin")" class="custom-nav-link">
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                         width="24"
+                         height="24"
+                         viewBox="0 0 24 24"
+                         fill="none"
+                         stroke="currentColor"
+                         stroke-width="2"
+                         stroke-linecap="round"
+                         stroke-linejoin="round"
+                         class="feather feather-file-text">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+                              class="icon-secondary"></path>
+                        <polyline points="14 2 14 8 20 8"
+                                  class="icon-secondary"></polyline>
+                        <line x1="16" y1="13" x2="8" y2="13" class="icon-primary"></line>
+                        <line x1="16" y1="17" x2="8" y2="17" class="icon-primary"></line>
+                        <polyline points="10 9 9 9 8 9" class="icon-primary"></polyline>
+                    </svg>
+                    <span class="link-text">Online Emp</span>
+                </a>
+            </li>
+            <li class="custom-nav-item">
+                <a href="@Url.Action("LeavingRequest","Admin")" class="custom-nav-link">
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                         width="24"
+                         height="24"
+                         viewBox="0 0 24 24"
+                         fill="none"
+                         stroke="currentColor"
+                         stroke-width="2"
+                         stroke-linecap="round"
+                         stroke-linejoin="round"
+                         class="feather feather-pie-chart">
+                        <path d="M21.21 15.89A10 10 0 1 1 8 2.83"
+                              class="icon-primary"></path>
+                        <path d="M22 12A10 10 0 0 0 12 2v10z"
+                              class="icon-secondary"></path>
+                    </svg>
+                    <span class="link-text">Leaving Request</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <main>
+        @RenderBody()
+    </main>
+    <script src="~/src/new/js/bootstrap.min.js"></script>
+    <script src="~/src/new/js/jquery.min.js"></script>
+</body>
+</html>

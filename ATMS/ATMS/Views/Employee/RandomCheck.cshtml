@@ -1,0 +1,21 @@
+﻿@model ATMS_TestingSubject.Models.UserInfo
+
+<div class="container">
+
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+
+
+        <div class="form-group">
+            @DateTime.Now.ToLongTimeString()
+
+            @Html.DisplayName(Model.Active + "Active User , thank u for ur service")
+        </div>
+
+
+
+    </div>
+
+
+</div>

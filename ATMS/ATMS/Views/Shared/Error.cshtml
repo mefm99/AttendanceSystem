@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Error</title>
+</head>
+<body>
+    <div class="container">
+        <hgroup>
+            <h1>Error.</h1>
+            <h2>An error occurred while processing your request.</h2>
+        </hgroup>
+        @{
+            if (Session["AdminId"] != null)
+            {
+                <h5><a class="link-text" href="@Url.Action("Index","Admin")">Home Page</a></h5>
+            }
+            else if (Session["HeadId"] != null)
+            {
+                <h5><a class="link-text" href="@Url.Action("Index","Head")">Home Page</a></h5>
+            }
+            else if (Session["EmpId"] != null)
+            {
+                <h5><a class="link-text" href="@Url.Action("Index","Employee")">Home Page</a></h5>
+            }
+            else
+            {
+                <h5><a class="link-text" href="@Url.Action("Index","Home")">Home Page</a></h5>
+            }
+        }
+    </div>
+</body>
+</html>
